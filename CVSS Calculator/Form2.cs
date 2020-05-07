@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace CVSS_Calculator {
     public partial class frmOptions : Form {
@@ -36,6 +37,13 @@ namespace CVSS_Calculator {
             _parent.Critical = Convert.ToDouble(txtCritical.Text);
             _parent.URL = txtURL.Text;
             _parent.CopyText = txtCopyText.Text;
+            RegistryKey Settings = Registry.CurrentUser.CreateSubKey("Seekurity");
+            Settings.SetValue("Low",_parent.Low);
+            Settings.SetValue("Medium", _parent.Medium);
+            Settings.SetValue("High", _parent.High);
+            Settings.SetValue("Critical", _parent.Critical);
+            Settings.SetValue("URL", _parent.URL);
+            Settings.SetValue("CopyText", _parent.CopyText);
             this.Close();
         }
     }

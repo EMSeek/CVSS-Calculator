@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace CVSS_Calculator {
     public partial class frmMain : Form {
+        public double VERSION = 1.0;
+        public String Author = "Eldar Marcussen";
+        //Set default values
         public double Low = 0.1;
         public double Medium = 4.0;
         public double High = 7.0;
@@ -35,9 +39,19 @@ namespace CVSS_Calculator {
 
 
 
+
         public frmMain() {
             InitializeComponent();
-
+            // Assign custom values if they exist
+            RegistryKey Settings = Registry.CurrentUser.OpenSubKey("Seekurity");
+            if (Settings != null) {
+                Low = Double.Parse(Settings.GetValue("Low").ToString());
+                Medium = Double.Parse(Settings.GetValue("Medium").ToString());
+                High = Double.Parse(Settings.GetValue("High").ToString());
+                Critical = Double.Parse(Settings.GetValue("Critical").ToString());
+                URL = Settings.GetValue("URL").ToString();
+                CopyText = Settings.GetValue("CopyText").ToString();
+            }
         }
 
         private void txtCVSSScore_TextChanged(object sender, EventArgs e) {
@@ -754,6 +768,7 @@ namespace CVSS_Calculator {
         }
 
         private void frmMain_Load(object sender, EventArgs e) {
+            this.Text = this.Text + " v" + VERSION.ToString("0.0");
             calculate();
         }
 
