@@ -465,99 +465,82 @@ namespace CVSS_Calculator {
             int idx = txtCVSSText.SelectionStart;
             String kc = e.KeyCode.ToString();
             e.Handled = true;
-            if (idx < 5) { //AV string
-                //txtCVSSText.SelectionStart = 0;
+            if (e.Control && e.KeyCode == Keys.C) {
+                btnCopy_Click(sender, null);
+                e.SuppressKeyPress = true;
+            } else  if (idx < 5) { //AV string
                 idx = 0;
                 if (kc == "Up") {
                     inc_AVS();
                 } else if (kc == "Down") {
                     dec_AVS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 5;
                     idx = 5;
                 }
             } else if (idx < 10) { //AC String
-                //txtCVSSText.SelectionStart = 5;
                 idx = 5;
                 if (kc == "Up") {
                     inc_ACS();
                 } else if (kc == "Down") {
                     dec_ACS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 10;
                     idx = 10;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 0;
                     idx = 0;
                 }
             } else if (idx < 15) { //PR String
-                //txtCVSSText.SelectionStart = 10;
                 idx = 10;
                 if (kc == "Up") {
                     inc_PRS();
                 } else if (kc == "Down") {
                     dec_PRS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 15;
                     idx = 15;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 5;
                     idx = 5;
                 }
             } else if (idx < 20) { //UI String
-                //txtCVSSText.SelectionStart = 15;
                 idx = 15;
                 if (kc == "Up") {
                     inc_UIS();
                 } else if (kc == "Down") {
                     dec_UIS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 20;
                     idx = 20;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 10;
                     idx = 10;
                 }
             } else if (idx < 24) { //S String
-                //txtCVSSText.SelectionStart = 20;
                 idx = 20;
                 if (kc == "Up") {
                     inc_SS();
                 } else if (kc == "Down") {
                     dec_SS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 24;
                     idx = 24;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 15;
                     idx = 15;
                 }
             } else if (idx < 28) { //C String
-                //txtCVSSText.SelectionStart = 24;
                 idx = 24;
                 if (kc == "Up") {
                     inc_CS();
                 } else if (kc == "Down") {
                     dec_CS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 28;
                     idx = 28;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 20;
                     idx = 20;
                 }
             } else if (idx < 32) { //I String
-                //txtCVSSText.SelectionStart = 28;
                 idx = 28;
                 if (kc == "Up") {
                     inc_IS();
                 } else if (kc == "Down") {
                     dec_IS();
                 } else if (kc == "Right") {
-                    //txtCVSSText.SelectionStart = 32;
                     idx = 32;
                 } else if (kc == "Left") {
-                    //txtCVSSText.SelectionStart = 24;
                     idx = 24;
                 }
             } else if (idx < 35) { //A String
@@ -572,7 +555,6 @@ namespace CVSS_Calculator {
             } else {
                 e.Handled = false;
             }
-            //MessageBox.Show(idx.ToString());
             txtCVSSText.SelectionStart = idx;
         }
 

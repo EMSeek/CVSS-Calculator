@@ -1,14 +1,14 @@
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.exe.config
+C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.exe.manifest
+C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.application
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.exe
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.pdb
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.csprojAssemblyReference.cache
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS_Calculator.frmMain.resources
+C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS_Calculator.frmOptions.resources
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS_Calculator.Properties.Resources.resources
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.csproj.GenerateResource.cache
-C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.exe
-C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.pdb
-C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS_Calculator.frmOptions.resources
-C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.exe.manifest
-C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\bin\Debug\CVSS Calculator.application
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.exe.manifest
 C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.application
+C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.exe
+C:\Users\emarcussen\source\repos\CVSS Calculator\CVSS Calculator\obj\Debug\CVSS Calculator.pdb
