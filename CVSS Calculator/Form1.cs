@@ -55,7 +55,6 @@ namespace CVSS_Calculator {
         }
 
         private void txtCVSSScore_TextChanged(object sender, EventArgs e) {
-            //MessageBox.Show(txtCVSSScore.Text);
             if (txtCVSSScore.Text != "") {
                 double _score;
                 if (Double.TryParse(txtCVSSScore.Text, out _score)) {
@@ -156,14 +155,14 @@ namespace CVSS_Calculator {
                 Score = 10;
             }
             txtCVSSScore.Text = Score.ToString("0.0");
-            Console.WriteLine();
+            /*Console.WriteLine();
             Console.WriteLine("========================");
             Console.WriteLine();
             Console.WriteLine("Exploitability: " + ESC + "==> " + RoundUp(ESC, 1));
             Console.WriteLine("IBS: " + IBS);
             Console.WriteLine("Impact: " + ISC + "==> " + RoundUp(ISC, 1));
             Console.WriteLine("Base score: " + BSC + "==> " + RoundUp(BSC, 1));
-            Console.WriteLine("Final score: " + Score);
+            Console.WriteLine("Final score: " + Score);*/
         }
 
         private double RoundUp(double value, int decimalpoint) {

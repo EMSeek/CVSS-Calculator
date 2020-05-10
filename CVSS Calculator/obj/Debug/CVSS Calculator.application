@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CVSS Calculator.exe.manifest" size="3498">
+    <dependentAssembly dependencyType="install" codebase="CVSS Calculator.exe.manifest" size="3970">
       <assemblyIdentity name="CVSS Calculator.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4Nz2AOdfqXF6wOt/6T5IDM7+XH2xYkZ26OmGP+RyeMc=</dsig:DigestValue>
+        <dsig:DigestValue>oKIU/ELLgRkCAikyrsyUHPSRwTA37BRS1f6fPLF31yQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
