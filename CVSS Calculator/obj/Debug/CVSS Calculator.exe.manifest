@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CVSS Calculator.exe" size="75200">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CVSS Calculator.exe" size="77248">
       <assemblyIdentity name="CVSS Calculator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WuKBKbBjFK2PaEt5Tcef1w8fdZDeGkY1fl3lVGHH+00=</dsig:DigestValue>
+        <dsig:DigestValue>Y5NEZLs0UkTBXmVyGU5CU+3guL45f81SA+/TYOKpRyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

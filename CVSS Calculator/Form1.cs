@@ -18,8 +18,9 @@ namespace CVSS_Calculator {
         public double Medium = 4.0;
         public double High = 7.0;
         public double Critical = 9.0;
-        public String URL = "https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=%CVSS%&version=3.1";
-        public String CopyText = "The risk is considered to be %RISK% with a CVSS score of %SCORE% - %URL%";
+        public String CopyName = "Default";
+        public String CopyText = "The risk is considered to be %RISK% with a CVSS score of %SCORE% - https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=%CVSS%&version=3.1";
+        public String[] Template_array;
         double AV = 0.85;
         String AVS = "AV:N";
         double AC = 0.77;
@@ -44,13 +45,28 @@ namespace CVSS_Calculator {
             InitializeComponent();
             // Assign custom values if they exist
             RegistryKey Settings = Registry.CurrentUser.OpenSubKey("Seekurity");
-            if (Settings != null) {
+            if (Settings == null) {
+                Settings = Registry.CurrentUser.CreateSubKey("Seekurity");
+                Settings.SetValue("Low", Low);
+                Settings.SetValue("Medium", Medium);
+                Settings.SetValue("High", High);
+                Settings.SetValue("Critical", Critical);
+                Settings.SetValue("Template", CopyName);
+                RegistryKey Templates = Settings.CreateSubKey("Templates");
+                Templates.SetValue(CopyName, CopyText);
+                Templates.SetValue("Generic", "This has a CVSS Score of %SCORE% - https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=%CVSS%&version=3.1");
+                Templates.SetValue("MarkDown", "CVSS Score\r\n===============\r\n%SCORE% - [%CVSS%](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=%CVSS%&version=3.1)");
+                Template_array = new string[] { CopyName, "MarkDown" }; //CopyName is "Default"
+            } else { 
                 Low = Double.Parse(Settings.GetValue("Low").ToString());
                 Medium = Double.Parse(Settings.GetValue("Medium").ToString());
                 High = Double.Parse(Settings.GetValue("High").ToString());
                 Critical = Double.Parse(Settings.GetValue("Critical").ToString());
-                URL = Settings.GetValue("URL").ToString();
-                CopyText = Settings.GetValue("CopyText").ToString();
+                RegistryKey Templates = Settings.OpenSubKey("Templates");
+                CopyName = Settings.GetValue("Template").ToString();
+                CopyText = Templates.GetValue(CopyName).ToString();
+                Template_array = Templates.GetValueNames();
+                Array.Sort(Template_array);
             }
         }
 
@@ -115,13 +131,13 @@ namespace CVSS_Calculator {
         }
 
         private void btnCopy_Click(object sender, EventArgs e) {
-            String mURL = URL.Replace("%CVSS%", txtCVSSText.Text);
-            mURL = mURL.Replace("%SCORE%", txtCVSSScore.Text);
-            mURL = mURL.Replace("%RISK%", txtRisk.Text);
+         //   String mURL = URL.Replace("%CVSS%", txtCVSSText.Text);
+         //   mURL = mURL.Replace("%SCORE%", txtCVSSScore.Text);
+         //   mURL = mURL.Replace("%RISK%", txtRisk.Text);
             String CP = CopyText.Replace("%CVSS%", txtCVSSText.Text);
             CP = CP.Replace("%SCORE%", txtCVSSScore.Text);
             CP = CP.Replace("%RISK%", txtRisk.Text);
-            CP = CP.Replace("%URL%", mURL);
+         //   CP = CP.Replace("%URL%", mURL);
             Clipboard.SetText(CP);
         }
 

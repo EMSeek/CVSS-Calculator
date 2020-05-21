@@ -17,11 +17,13 @@ link to CVSS rating online and a risk reporting template.
 
 ![alt text](Options.png "Options screenshot")
 
+There are a few templates provided in the calculator and these can easily be swapped between in the options window.
+And custom templates are easily added, give it a new name and write the text then click save.
+
 Templating supports the following variables:
  * %CVSS% Vector string
  * %SCORE% CVSS numerical score
  * %RISK% Risk rating based on the CVSS score treshold
- * %URL% (Not applicable for the URL)
 
 Clicking on the copy button, or pressing ctrl+c inside the CVSS textbox
 will copy the templated text with the variables filled in, ready to be
